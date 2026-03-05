@@ -10,6 +10,7 @@ import SimulacaoVendasSection from '@/components/SimulacaoVendasSection';
 import ChecklistPreVistoriaSection from '@/components/ChecklistPreVistoriaSection';
 import ClosingSection from '@/components/ClosingSection';
 import ComplianceSection from '@/components/ComplianceSection';
+import ObjecoesSection from '@/components/ObjecoesSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
         <ProcessoVendaSection />
         <FollowUpSection />
         <SimulacaoVendasSection />
+        <ObjecoesSection />
         <ChecklistPreVistoriaSection />
         <ClosingSection />
         <ComplianceSection />

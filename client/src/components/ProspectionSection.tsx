@@ -86,8 +86,8 @@ export default function ProspectionSection() {
         {/* Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-alluz">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663383105124/9uY36LjZFucHFC8sQqf8sc/prospection-strategies-3N9URLMhyyHuh6cWbGrn8N.webp"
-            alt="5 Estrategias de Prospeccao"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663407321325/FD8oJ6AEJjSx2iucGRgoCW/cartilha-2_3a126b23.png"
+            alt="5 Estratégias de Prospecção - Exemplos"
             className="w-full h-auto"
           />
         </div>

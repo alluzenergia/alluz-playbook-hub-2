@@ -9,8 +9,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
     <section id="hero" className="relative min-h-auto py-12 bg-white">
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-1 gap-12 items-start">
-          {/* Video Section - Featured */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Video Section */}
           <div className="w-full">
             <div className="relative w-full bg-gray-100 rounded-lg overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
               <iframe
@@ -62,11 +62,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-200">
               <div>
                 <p className="text-3xl font-bold text-yellow-400">5</p>
-                <p className="text-sm text-gray-600">Estrategias</p>
+                <p className="text-sm text-gray-600">Estratégias</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-yellow-400">3</p>
-                <p className="text-sm text-gray-600">Niveis</p>
+                <p className="text-sm text-gray-600">Níveis</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-yellow-400">100%</p>

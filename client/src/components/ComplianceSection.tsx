@@ -142,52 +142,7 @@ export default function ComplianceSection() {
           ))}
         </div>
 
-        {/* Compliance Checklist */}
-        <div className="bg-white rounded-xl shadow-alluz p-8 md:p-12 mb-12">
-          <h3 className="text-2xl font-bold text-blue-600 mb-8">Checklist Pre-Proposta</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-2xl">📋</span> Documentacao
-              </h4>
-              <div className="space-y-3">
-                {[
-                  'Fotos do telhado (mínimo 3 ângulos)',
-                  'Foto do quadro elétrico',
-                  'Cópias das últimas 3 faturas',
-                  'Dados completos do cliente',
-                  'Comprovante de endereço',
-                  'Documento de identidade',
-                ].map((item, idx) => (
-                  <label key={idx} className="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" className="w-5 h-5 text-blue-600 rounded" />
-                    <span className="text-gray-700">{item}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-2xl">✅</span> Validacao
-              </h4>
-              <div className="space-y-3">
-                {[
-                  'Proposta lançada no Sistema Alluz',
-                  'Dados do cliente verificados',
-                  'Cálculos de economia revisados',
-                  'Autorização do cliente obtida',
-                  'Próxima ação agendada',
-                  'Cliente recebeu cópia da proposta',
-                ].map((item, idx) => (
-                  <label key={idx} className="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" className="w-5 h-5 text-green-600 rounded" />
-                    <span className="text-gray-700">{item}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         {/* Key Metrics */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">

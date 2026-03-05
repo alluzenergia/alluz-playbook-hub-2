@@ -1,4 +1,3 @@
-import { AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export default function FollowUpSection() {
@@ -38,14 +37,14 @@ export default function FollowUpSection() {
     {
       day: 'D8',
       title: 'Oferta de Arquivamento',
-      script: '"Posso arquivar sua proposta para você parar de receber comunicados?"',
-      purpose: 'Permitir que cliente se desconecte ou reafirme interesse'
+      script: '"Vamos arquivar por enquanto? Quando sua situação mudar, você me liga."',
+      purpose: 'Preparar para arquivamento respeitoso'
     },
     {
       day: 'D15',
-      title: 'Última Tentativa',
-      script: '"Se ainda fizer sentido, consigo retomar sem você começar do zero."',
-      purpose: 'Deixar porta aberta para futuro'
+      title: 'Reativação',
+      script: '"Oi! Mudou algo aí? Vamos conversar?"',
+      purpose: 'Reativar o lead após 15 dias'
     }
   ];
 
@@ -55,7 +54,7 @@ export default function FollowUpSection() {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl font-bold text-gray-900">
-            Estratégia de Follow-up
+            Como fazer o Follow-up do cliente?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             O follow-up é a arte de manter o cliente engajado. Realize 7 toques estratégicos antes de considerar uma proposta como perdida.
@@ -71,56 +70,61 @@ export default function FollowUpSection() {
             >
               <button
                 onClick={() => setExpandedDay(expandedDay === item.day ? null : item.day)}
-                className="w-full p-6 flex items-center justify-between hover:bg-yellow-50 transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between bg-yellow-50 hover:bg-yellow-100 transition-colors"
               >
                 <div className="flex items-center gap-4 text-left flex-1">
-                  <div className="bg-yellow-400 text-gray-900 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-yellow-600 bg-yellow-200 px-3 py-1 rounded">
                     {item.day}
-                  </div>
+                  </span>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                    <p className="font-bold text-gray-900">{item.title}</p>
                     <p className="text-sm text-gray-600">{item.purpose}</p>
                   </div>
                 </div>
-                <span className="text-yellow-400 text-2xl ml-4">
-                  {expandedDay === item.day ? '−' : '+'}
-                </span>
               </button>
+
               {expandedDay === item.day && (
-                <div className="bg-yellow-50 border-t-2 border-yellow-300 p-6">
-                  <p className="text-sm font-bold text-gray-700 mb-2">SCRIPT:</p>
-                  <p className="text-base text-gray-800 italic font-medium">
-                    {item.script}
-                  </p>
+                <div className="px-6 py-4 bg-gray-50 border-t border-yellow-200">
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm font-bold text-gray-900 mb-2">Script:</p>
+                      <p className="text-sm text-gray-700 italic">{item.script}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-gray-900 mb-2">Objetivo:</p>
+                      <p className="text-sm text-gray-700">{item.purpose}</p>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
           ))}
         </div>
 
-        {/* Minimum Before Losing */}
-        <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg mb-8">
-          <div className="flex gap-4">
-            <div className="text-2xl">✓</div>
-            <div>
-              <h4 className="font-bold text-green-900 mb-2">Mínimo Antes de Perder</h4>
-              <p className="text-green-800 text-sm leading-relaxed">
-                Realize pelo menos <span className="font-bold">7 toques</span> (D0, D1, D2, D4, D6, D8, D15) antes de considerar a proposta como perdida. Isso demonstra persistência profissional e aumenta suas chances de fechamento. Cada contato deve ter um propósito claro — não é apenas "cobrar", é agregar valor, responder dúvidas e demonstrar profissionalismo.
-              </p>
-            </div>
-          </div>
+        {/* Pro Tips */}
+        <div className="bg-blue-50 border-l-4 border-blue-400 rounded-lg p-6 mb-12">
+          <p className="text-sm font-bold text-blue-900 uppercase mb-2">💡 Regra de Ouro</p>
+          <p className="text-sm text-blue-800">
+            Nunca deixe mais de 2 dias sem contato com um Lead A. Para Lead B, respeite o ritmo mas mantenha a cadência. Lead C pode esperar 30+ dias.
+          </p>
         </div>
 
-        {/* Strategy Note */}
-        <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg">
-          <div className="flex gap-4">
-            <AlertCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-blue-900 mb-2">Estratégia de Contato</h4>
-              <p className="text-blue-800 text-sm leading-relaxed">
-                Cada contato deve ter um propósito claro. Não é apenas "cobrar", é agregar valor, responder dúvidas e demonstrar persistência. O objetivo é manter o cliente engajado e aumentar a probabilidade de conversão.
-              </p>
-            </div>
+        {/* Follow-up Strategy */}
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 rounded-lg p-6 border border-yellow-200">
+            <p className="text-lg font-bold text-yellow-900 mb-3">Lead A</p>
+            <p className="text-sm text-yellow-800 mb-3">Responda em menos de 2 horas. Máximo 1 dia entre toques.</p>
+            <p className="text-xs text-yellow-700 font-medium">Cadência: D0 → D1 (24h) → Visita</p>
+          </div>
+          <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-lg p-6 border border-orange-200">
+            <p className="text-lg font-bold text-orange-900 mb-3">Lead B</p>
+            <p className="text-sm text-orange-800 mb-3">Use a cadência completa: D0/D1/D2/D4/D6/D8/D15.</p>
+            <p className="text-xs text-orange-700 font-medium">Cadência: 7 toques estratégicos</p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-lg p-6 border border-gray-200">
+            <p className="text-lg font-bold text-gray-900 mb-3">Lead C</p>
+            <p className="text-sm text-gray-800 mb-3">Arquive com respeito. Reative em 30/60/90 dias.</p>
+            <p className="text-xs text-gray-700 font-medium">Cadência: Arquivar → Nutrir → Reativar</p>
           </div>
         </div>
       </div>

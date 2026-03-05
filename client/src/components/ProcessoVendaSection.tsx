@@ -70,7 +70,7 @@ export default function ProcessoVendaSection() {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl font-bold text-gray-900">
-            Processo de Venda
+            Como funciona o Processo de vendas na Alluz?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Siga o passo a passo estruturado para vender com confiança. Cada etapa é crucial para o sucesso.

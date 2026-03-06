@@ -14,7 +14,7 @@ export default function Sidebar({ onNavigate, activeSection }: SidebarProps) {
     { id: 'levels', label: 'Niveis', icon: Target },
     { id: 'prospection', label: 'Prospeccao', icon: Target },
     { id: 'qualification', label: 'Qualificacao', icon: CheckCircle },
-    { id: 'follow-up-vendas', label: 'Follow-up', icon: Clock },
+    { id: 'follow-up', label: 'Follow-up', icon: Clock },
     { id: 'simulacao-vendas', label: 'Simulador', icon: Zap },
     { id: 'objections', label: 'Contorno de Objecoes', icon: Shield },
     { id: 'closing', label: 'Fechamento', icon: Handshake },

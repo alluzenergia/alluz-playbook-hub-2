@@ -213,28 +213,28 @@ export default function ObjecoesSection() {
         </div>
 
         {/* Summary */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold mb-4">Padrão de Resposta Universal</h3>
+        <div className="mt-16 bg-yellow-300 bg-opacity-70 rounded-xl p-8 md:p-12 border-2 border-yellow-400">
+          <h3 className="text-2xl font-bold mb-4 text-gray-900">Padrão de Resposta Universal</h3>
           <div className="space-y-4">
-            <p className="text-lg text-blue-100">
+            <p className="text-lg text-gray-800 font-medium">
               Para qualquer objeção, siga este padrão:
             </p>
             <div className="grid md:grid-cols-4 gap-4">
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <p className="text-sm font-bold text-blue-200 mb-2">1️⃣ ESCUTE</p>
-                <p className="text-sm text-blue-100">Deixe o cliente falar completamente sem interrupções.</p>
+              <div className="bg-white bg-opacity-60 rounded-lg p-4 border border-yellow-400">
+                <p className="text-sm font-bold text-gray-900 mb-2">1️⃣ ESCUTE</p>
+                <p className="text-sm text-gray-800">Deixe o cliente falar completamente sem interrupções.</p>
               </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <p className="text-sm font-bold text-blue-200 mb-2">2️⃣ VALIDE</p>
-                <p className="text-sm text-blue-100">Reconheça o sentimento: "Entendo sua preocupação..."</p>
+              <div className="bg-white bg-opacity-60 rounded-lg p-4 border border-yellow-400">
+                <p className="text-sm font-bold text-gray-900 mb-2">2️⃣ VALIDE</p>
+                <p className="text-sm text-gray-800">Reconheça o sentimento: "Entendo sua preocupação..."</p>
               </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <p className="text-sm font-bold text-blue-200 mb-2">3️⃣ RESPONDA</p>
-                <p className="text-sm text-blue-100">Apresente o fato técnico ou financeiro com clareza.</p>
+              <div className="bg-white bg-opacity-60 rounded-lg p-4 border border-yellow-400">
+                <p className="text-sm font-bold text-gray-900 mb-2">3️⃣ RESPONDA</p>
+                <p className="text-sm text-gray-800">Apresente o fato técnico ou financeiro com clareza.</p>
               </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <p className="text-sm font-bold text-blue-200 mb-2">4️⃣ PERGUNTE</p>
-                <p className="text-sm text-blue-100">Faça uma pergunta que leve ao sim.</p>
+              <div className="bg-white bg-opacity-60 rounded-lg p-4 border border-yellow-400">
+                <p className="text-sm font-bold text-gray-900 mb-2">4️⃣ PERGUNTE</p>
+                <p className="text-sm text-gray-800">Faça uma pergunta que leve ao sim.</p>
               </div>
             </div>
           </div>

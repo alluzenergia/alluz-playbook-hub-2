@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Zap, Home, Target, CheckCircle, Handshake, AlertCircle } from 'lucide-react';
+import { Menu, X, Zap, Home, Target, CheckCircle, Handshake, AlertCircle, Clock, Shield } from 'lucide-react';
 
 interface SidebarProps {
   onNavigate: (section: string) => void;
@@ -14,6 +14,9 @@ export default function Sidebar({ onNavigate, activeSection }: SidebarProps) {
     { id: 'levels', label: 'Niveis', icon: Target },
     { id: 'prospection', label: 'Prospeccao', icon: Target },
     { id: 'qualification', label: 'Qualificacao', icon: CheckCircle },
+    { id: 'follow-up-vendas', label: 'Follow-up', icon: Clock },
+    { id: 'simulacao-vendas', label: 'Simulador', icon: Zap },
+    { id: 'objections', label: 'Contorno de Objecoes', icon: Shield },
     { id: 'closing', label: 'Fechamento', icon: Handshake },
     { id: 'compliance', label: 'Compliance', icon: AlertCircle },
   ];

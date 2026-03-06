@@ -11,6 +11,7 @@ import ChecklistPreVistoriaSection from '@/components/ChecklistPreVistoriaSectio
 import ClosingSection from '@/components/ClosingSection';
 import ComplianceSection from '@/components/ComplianceSection';
 import ObjecoesSection from '@/components/ObjecoesSection';
+import ChatLia from '@/components/ChatLia';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -43,6 +44,8 @@ export default function Home() {
         <ComplianceSection />
         <Footer />
       </main>
+      {/* Chat LIA - Consultora de Inteligência Comercial */}
+      <ChatLia />
     </div>
   );
 }

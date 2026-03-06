@@ -11,6 +11,7 @@ interface Message {
 
 export default function ChatLia() {
   const [isOpen, setIsOpen] = useState(false);
+  const [sessionId] = useState(() => `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -49,6 +50,7 @@ export default function ChatLia() {
     try {
       const response = await chatMutation.mutateAsync({
         message: input,
+        sessionId: sessionId,
       });
 
       const assistantMessage: Message = {
@@ -61,10 +63,11 @@ export default function ChatLia() {
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Erro ao enviar mensagem:', error);
+      console.error('Detalhes do erro:', error);
       const errorMessage: Message = {
         id: (Date.now() + 2).toString(),
         role: 'assistant',
-        content: 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.',
+        content: 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente. (' + (error instanceof Error ? error.message : 'Erro desconhecido') + ')',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -146,7 +149,7 @@ export default function ChatLia() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                onKeyPress={(e) => e.key === 'Enter' && !chatMutation.isPending && handleSendMessage()}
                 placeholder="Sua dúvida aqui..."
                 className="flex-1 px-4 py-2 border-2 border-yellow-300 rounded-lg focus:outline-none focus:border-yellow-500 text-sm"
                 disabled={chatMutation.isPending}

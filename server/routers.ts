@@ -21,16 +21,27 @@ export const appRouter = router({
 
   // LIA Chat Router
   lia: router({
-    chat: protectedProcedure
+    chat: publicProcedure
       .input(z.object({
         message: z.string().min(1, "Mensagem não pode estar vazia"),
+        sessionId: z.string().optional(), // Session ID para usuários anônimos
       }))
       .mutation(async ({ ctx, input }) => {
-        const userId = ctx.user.id;
+        // Usar ID do usuário autenticado ou gerar um ID anônimo baseado na sessionId
+        const userId = ctx.user?.id || 0; // 0 para usuários anônimos
+        const sessionId = input.sessionId || `anon-${Math.random().toString(36).substr(2, 9)}`;
         const userMessage = input.message;
 
         // Get or create conversation
-        let conversation = await getLiaConversation(userId);
+        // Para usuários anônimos, usar sessionId como chave
+        let conversation: any = null;
+        if (userId === 0) {
+          // Armazenar em memória para usuários anônimos (não persistir no BD)
+          // Aqui poderíamos usar um cache em memória ou sessionStorage
+          conversation = null; // Por enquanto, sem persistência para anônimos
+        } else {
+          conversation = await getLiaConversation(userId);
+        }
         let messages: Array<{ role: 'user' | 'assistant'; content: string }> = [];
 
         if (conversation) {
@@ -94,10 +105,13 @@ IMPORTANTE:
         // Update conversation with assistant response
         messages.push({ role: 'assistant', content: assistantMessage as string });
 
-        if (conversation) {
-          await updateLiaConversation(userId, messages);
-        } else {
-          await createLiaConversation(userId, messages);
+        // Apenas persistir no BD se for usuário autenticado
+        if (userId !== 0) {
+          if (conversation) {
+            await updateLiaConversation(userId, messages);
+          } else {
+            await createLiaConversation(userId, messages);
+          }
         }
 
         return {

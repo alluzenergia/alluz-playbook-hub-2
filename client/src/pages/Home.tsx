@@ -13,8 +13,10 @@ import ComplianceSection from '@/components/ComplianceSection';
 import ObjecoesSection from '@/components/ObjecoesSection';
 import ChatLia from '@/components/ChatLia';
 import Footer from '@/components/Footer';
+import { useAuth } from '@/_core/hooks/useAuth';
 
 export default function Home() {
+  const { user } = useAuth();
   const [activeSection, setActiveSection] = useState('hero');
 
   const handleNavigate = (section: string) => {

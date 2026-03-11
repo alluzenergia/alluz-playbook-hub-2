@@ -15,7 +15,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <div className="relative w-full bg-gray-100 rounded-lg overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/Nv3yK0dd32s"
+                src="https://www.youtube.com/embed/yLSVl9S6loI"
                 title="Alluz Energia - Não vendemos kit solar, vendemos resultado"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
